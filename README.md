@@ -3,7 +3,7 @@
 # RoNum 
 Clasa PHP ce face conversie din numar in litere (romana)
 
-#Cum se poate instala?
+# Cum se poate instala?
 
 ### 1. composer
 ```php
@@ -20,7 +20,7 @@ composer require  alcea/ro-num "~1"
 git clone https://github.com/alceanicu/ro-num.git
 ```
 
-#Mod de utilizare?
+# Mod de utilizare?
 
 ```php
  <?php
