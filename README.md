@@ -7,12 +7,12 @@ Clasa PHP ce face conversie din numar in litere (romana)
 
 ### 1. composer
 ```php
-composer require  alcea/ro-num "~1"
+composer require  alcea/ro-num
 ```
 
 ### 2. sau editeaza - require section from composer.json
 ```
-"alcea/ro-num": "~1"
+"alcea/ro-num": "*"
 ```
 
 ### 3. sau clone from GitHub
