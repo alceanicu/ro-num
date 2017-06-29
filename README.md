@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/alceanicu/ro-num.svg?branch=master)](https://travis-ci.org/alceanicu/ro-num) [![Latest Stable Version](https://poser.pugx.org/alcea/ro-num/v/stable.svg)](https://packagist.org/packages/alcea/ro-num) [![Total Downloads](https://poser.pugx.org/alcea/ro-num/downloads.svg)](https://packagist.org/packages/alcea/ro-num) [![Latest Unstable Version](https://poser.pugx.org/alcea/ro-num/v/unstable.svg)](https://packagist.org/packages/alcea/ro-num) [![License](https://poser.pugx.org/alcea/ro-num/license.svg)](https://packagist.org/packages/alcea/ro-num)
 
-# RoNum 
+# Transformare numar in litere
 Clasa PHP ce face conversie din numar in litere (romana)
 
 # Cum se poate instala?
