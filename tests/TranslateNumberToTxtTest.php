@@ -1,10 +1,10 @@
 <?php
 
-use alcea\roNum\RoNum;
+use alcea\romanian\TranslateNumberToTxt;
 
-class RoNumTest extends \PHPUnit_Framework_TestCase
+class TranslateNumberToTxtTest extends \PHPUnit_Framework_TestCase
 {
-    public function nrDataProvider()
+    public function numberDataProvider()
     {
         return [
             //[$nr, $sep, $nrTxt]
@@ -12,7 +12,7 @@ class RoNumTest extends \PHPUnit_Framework_TestCase
             ['9abc', '', ''],
             ['9.23', '', ''],
             ['9e23', '', ''],
-            [999999999999999, '', ''],
+            [9999999999999999, '', ''],
 
             [0, ' ', 'zero'],
             [1, ' ', 'un'],
@@ -193,12 +193,11 @@ class RoNumTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @dataProvider nrDataProvider
+     * @dataProvider numberDataProvider
      */
-    public function testValid($nr, $sep, $nrTxt)
+    public function testValidNumbers($number, $separator, $numberInRoTxt)
     {
-        $num = new RoNum();
-        $this->assertEquals($num->format($nr, $sep), $nrTxt);
+        $this->assertEquals(new TranslateNumberToTxt($number, $separator), $numberInRoTxt);
     }
 
 }

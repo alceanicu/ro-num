@@ -23,11 +23,10 @@ git clone https://github.com/alceanicu/ro-num.git
 # Mod de utilizare?
 
 ```php
- <?php
- use alcea\roNum\RoNum;
- 
- $number = 501;
- $roNum = new RoNum();
- echo $roNum->format($number); // cinci sute unu
- echo $roNum->format($number, '#'); // cinci#sute#unu
+ use alcea\romanian\TranslateNumberToTxt;
+
+ $number = '22620';
+ echo new TranslateNumberToTxt($number);      // douăzeci şi două de mii şase sute douăzeci 
+ echo new TranslateNumberToTxt($number, '#'); // douăzeci#şi#două#de#mii#şase#sute#douăzeci 
+ echo new TranslateNumberToTxt($number, '');  // douăzecişidouădemiişasesutedouăzeci
  ```
