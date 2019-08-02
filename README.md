@@ -35,3 +35,10 @@ git clone https://github.com/alceanicu/ro-num.git
  echo TranslateNumberToTxt::convert(255);     // 'două sute cincizeci şi cinci'
  echo TranslateNumberToTxt::convert(83, '#'); // 'optzeci#şi#trei'
  ```
+
+# How to run tests
+```
+## Open an terminal and run commands:
+cd ro-num
+./vendor/bin/phpunit --bootstrap ./vendor/autoload.php --testdox
+```
