@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/alceanicu/ro-num.svg?branch=master)](https://travis-ci.org/alceanicu/ro-num) [![Latest Stable Version](https://poser.pugx.org/alcea/ro-num/v/stable.svg)](https://packagist.org/packages/alcea/ro-num) [![Total Downloads](https://poser.pugx.org/alcea/ro-num/downloads.svg)](https://packagist.org/packages/alcea/ro-num) [![Latest Unstable Version](https://poser.pugx.org/alcea/ro-num/v/unstable.svg)](https://packagist.org/packages/alcea/ro-num) [![License](https://poser.pugx.org/alcea/ro-num/license.svg)](https://packagist.org/packages/alcea/ro-num)
+[![Build Status](https://travis-ci.org/alceanicu/ro-num.svg?branch=master)](https://travis-ci.org/alceanicu/ro-num) [![Latest Stable Version](https://poser.pugx.org/alcea/ro-num/v/stable.svg)](https://packagist.org/packages/alcea/ro-num) [![Total Downloads](https://poser.pugx.org/alcea/ro-num/downloads.svg)](https://packagist.org/packages/alcea/ro-num) [![License](https://poser.pugx.org/alcea/ro-num/license.svg)](https://packagist.org/packages/alcea/ro-num)
 
 # Transformare numar in litere
 Clasa PHP ce face conversie din numar(cifre) in litere (romana).
@@ -51,3 +51,8 @@ git clone https://github.com/alceanicu/ro-num.git
 cd ro-num
 ./vendor/bin/phpunit --bootstrap ./vendor/autoload.php --testdox
 ```
+
+
+## License
+
+This package is licensed under the [MIT](http://opensource.org/licenses/MIT) license.
