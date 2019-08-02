@@ -1,9 +1,11 @@
 <?php
 
 use alcea\romanian\TranslateNumberToTxt;
+use PHPUnit\Framework\TestCase;
 
-class TranslateNumberToTxtTest extends \PHPUnit_Framework_TestCase
+final class CnpTest extends TestCase
 {
+
     public function numberDataProvider()
     {
         return [
