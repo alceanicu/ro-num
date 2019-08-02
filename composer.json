@@ -2,7 +2,7 @@
     "name": "alcea/ro-num",
     "description": "Clasa PHP ce face conversie din numar(cifre) in litere (romana)",
     "homepage": "https://github.com/alceanicu/ro-num",
-    "keywords": ["PHP","conversie", "cifre'],
+    "keywords": ["PHP","conversie", "cifre"],
     "license": "MIT",
     "authors": [
         {
