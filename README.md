@@ -2,6 +2,15 @@
 
 # Transformare numar in litere
 Clasa PHP ce face conversie din numar(cifre) in litere (romana).
+Transforma orice numar din intervalul [0-999 999 999 999] in transcriere lui in litere (in limba romana).
+Orice numar invalid sau in afara intervalului va fi convertit in '' (empty space);
+Optional se poate seta si un separator (implicint este ' ' [empty space]);
+EX:
+```txt
+0 va fi transcris in 'zero'
+83 va fi transcris in 'optzeci şi trei'
+10002 va fi transcris in 'zece mii doi',
+```
 
 # Cum se poate instala?
 
@@ -36,7 +45,7 @@ git clone https://github.com/alceanicu/ro-num.git
  echo TranslateNumberToTxt::convert(83, '#'); // 'optzeci#şi#trei'
  ```
 
-# How to run tests
+# How to run tests?
 ```
 ## Open an terminal and run commands:
 cd ro-num
