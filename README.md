@@ -21,7 +21,7 @@ composer require alcea/ro-num
 
 ### 2. sau editeaza - require section from composer.json
 ```
-"alcea/ro-num": "*"
+"alcea/ro-num": "^1.1"
 ```
 
 ### 3. sau clone from GitHub
