@@ -5,6 +5,22 @@ namespace alcea\romanian;
 /**
  * Class TranslateNumberToTxt
  *
+ * How to use it:
+ *
+ * ```php
+ * use alcea\romanian\TranslateNumberToTxt;
+ *
+ * $number = '22620';
+ * echo new TranslateNumberToTxt($number);      // douăzeci şi două de mii şase sute douăzeci
+ * echo new TranslateNumberToTxt($number, '#'); // douăzeci#şi#două#de#mii#şase#sute#douăzeci
+ * echo new TranslateNumberToTxt($number, '');  // douăzecişidouădemiişasesutedouăzeci
+ *
+ * # OR
+ * echo TranslateNumberToTxt::convert(255);     // 'două sute cincizeci şi cinci'
+ * echo TranslateNumberToTxt::convert(83, '#'); // 'optzeci#şi#trei'
+ *
+ * ```
+ *
  * @property string $_number
  * @property string $_separator
  * @property string $_numberInTxt
@@ -59,6 +75,16 @@ class TranslateNumberToTxt
     ];
 
     /**
+     * @param $number
+     * @param string $separator
+     * @return TranslateNumberToTxt
+     */
+    public static function convert($number, $separator = ' ')
+    {
+        return new static($number, $separator);
+    }
+
+    /**
      * @param string $number
      * @param string $separator
      */
@@ -78,7 +104,6 @@ class TranslateNumberToTxt
     }
 
     /**
-     * 
      * @return string
      */
     private function formatNumberToTxt()
@@ -116,7 +141,7 @@ class TranslateNumberToTxt
 
     /**
      * @param string $groupKey - [0 => 'miliarde', 1 => 'milioane', 2 => 'mii', 3 => 'sute']
-     * @param string $groupValue - XXX as [0-9][0-9][1-9]
+     * @param string $groupValue - XXX as [0-9][0-9][0-9][0-9]
      * @param bool $firstGroup
      * @return string
      */

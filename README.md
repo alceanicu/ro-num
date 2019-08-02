@@ -29,4 +29,9 @@ git clone https://github.com/alceanicu/ro-num.git
  echo new TranslateNumberToTxt($number);      // douăzeci şi două de mii şase sute douăzeci 
  echo new TranslateNumberToTxt($number, '#'); // douăzeci#şi#două#de#mii#şase#sute#douăzeci 
  echo new TranslateNumberToTxt($number, '');  // douăzecişidouădemiişasesutedouăzeci
+ 
+ // or
+
+ echo TranslateNumberToTxt::convert(255);     // 'două sute cincizeci şi cinci'
+ echo TranslateNumberToTxt::convert(83, '#'); // 'optzeci#şi#trei'
  ```

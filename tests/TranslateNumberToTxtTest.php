@@ -6,15 +6,49 @@ use PHPUnit\Framework\TestCase;
 final class CnpTest extends TestCase
 {
 
-    public function numberDataProvider()
+    /**
+     * @return array
+     */
+    public function invalidNumberDataProvider()
     {
         return [
-            //[$nr, $sep, $nrTxt]
             ['zero', '', ''],
+            ['numbers', '', ''],
             ['9abc', '', ''],
+            ['0X9abc', '', ''],
             ['9.23', '', ''],
+            ['9,23', '', ''],
             ['9e23', '', ''],
+            ['-12', '', ''],
             [9999999999999999, '', ''],
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    public function allBaseNumberDataProvider()
+    {
+        return [
+            #number, separator, expected
+            [83, '', 'optzecişitrei'],                          // decimal number
+            [0123, '', 'optzecişitrei'],                        // octal number (equivalent to 83 decimal)
+            [0x1A, '_', 'douăzeci_şi_şase'],                    // hexadecimal number (equivalent to 26 decimal)
+            [0b11111111, '#', 'două#sute#cincizeci#şi#cinci'],  // binary number (equivalent to 255 decimal)
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    public function validNumberDataProvider()
+    {
+        return [
+            #number, separator, expected
+//            [0123, '', 'optzecişitrei'],                        // octal number (equivalent to 83 decimal)
+//            [0123, '#', 'optzeci#şi#trei'],                     // octal number (equivalent to 83 decimal)
+//            [0x1A, '_', 'douăzeci_şi_şase'],                    // hexadecimal number (equivalent to 26 decimal)
+//            [0b11111111, ' ', 'două sute cincizeci şi cinci'],  // binary number (equivalent to 255 decimal)
 
             [0, ' ', 'zero'],
             [1, ' ', 'un'],
@@ -191,15 +225,74 @@ final class CnpTest extends TestCase
             [602232136102, ' ', 'şase sute două miliarde două sute treizeci şi două de milioane o sută treizeci şi şase de mii o sută doi'],
 
             [999999999999, ' ', 'nouă sute nouăzeci şi nouă de miliarde nouă sute nouăzeci şi nouă de milioane nouă sute nouăzeci şi nouă de mii nouă sute nouăzeci şi nouă'],
+            [999999999999, ' ', 'nouă sute nouăzeci şi nouă de miliarde nouă sute nouăzeci şi nouă de milioane nouă sute nouăzeci şi nouă de mii nouă sute nouăzeci şi nouă'],
         ];
     }
 
     /**
-     * @dataProvider numberDataProvider
+     * @dataProvider validNumberDataProvider
+     * @param string|int $number
+     * @param string $separator
+     * @param string $expected
      */
-    public function testValidNumbers($number, $separator, $numberInRoTxt)
+    public function testCanGetTextRepresentationFromValidNumbers($number, $separator, $expected)
     {
-        $this->assertEquals(new TranslateNumberToTxt($number, $separator), $numberInRoTxt);
+        $this->assertEquals(new TranslateNumberToTxt($number, $separator), $expected);
+    }
+
+    /**
+     * @dataProvider validNumberDataProvider
+     * @param string|int $number
+     * @param string $separator
+     * @param string $expected
+     */
+    public function testCanGetTextRepresentationFromValidNumbersByCallingStaticConvertFunction($number, $separator, $expected)
+    {
+        $this->assertEquals(TranslateNumberToTxt::convert($number, $separator), $expected);
+    }
+
+    /**
+     * @dataProvider allBaseNumberDataProvider
+     * @param string|int $number
+     * @param string $separator
+     * @param string $expected
+     */
+    public function testCanGetTextRepresentationFromOtherBaseValidNumbers($number, $separator, $expected)
+    {
+        $this->assertEquals(new TranslateNumberToTxt($number, $separator), $expected);
+    }
+
+    /**
+     * @dataProvider allBaseNumberDataProvider
+     * @param string|int $number
+     * @param string $separator
+     * @param string $expected
+     */
+    public function testCanGetTextRepresentationFromOtherBaseValidNumbersByCallingStaticConvertFunction($number, $separator, $expected)
+    {
+        $this->assertEquals(TranslateNumberToTxt::convert($number, $separator), $expected);
+    }
+
+    /**
+     * @dataProvider invalidNumberDataProvider
+     * @param string|int $number
+     * @param string $separator
+     * @param string $expected
+     */
+    public function testCanNotGetTextRepresentationFromInvalidNumbers($number, $separator, $expected)
+    {
+        $this->assertEquals(new TranslateNumberToTxt($number, $separator), $expected);
+    }
+
+    /**
+     * @dataProvider invalidNumberDataProvider
+     * @param string|int $number
+     * @param string $separator
+     * @param string $expected
+     */
+    public function testCanNotGetTextRepresentationFromInvalidNumbersByCallingStaticConvertFunction($number, $separator, $expected)
+    {
+        $this->assertEquals(new TranslateNumberToTxt($number, $separator), $expected);
     }
 
 }
