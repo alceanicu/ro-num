@@ -12,14 +12,14 @@ EX:
 10002 va fi transcris in 'zece mii doi',
 ```
 
-# Cum se poate instala?
+# How to install?
 
 ### 1. composer
 ```php
 composer require alcea/ro-num
 ```
 
-### 2. sau editeaza - require section from composer.json
+### 2. or, edit require section from composer.json
 ```
 "alcea/ro-num": "^1.1"
 ```
@@ -29,7 +29,7 @@ composer require alcea/ro-num
 git clone https://github.com/alceanicu/ro-num.git
 ```
 
-# Mod de utilizare?
+# How to use?
 
 ```php
  use alcea\romanian\TranslateNumberToTxt;
