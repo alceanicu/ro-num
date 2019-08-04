@@ -45,11 +45,6 @@ final class CnpTest extends TestCase
     {
         return [
             #number, separator, expected
-//            [0123, '', 'optzecişitrei'],                        // octal number (equivalent to 83 decimal)
-//            [0123, '#', 'optzeci#şi#trei'],                     // octal number (equivalent to 83 decimal)
-//            [0x1A, '_', 'douăzeci_şi_şase'],                    // hexadecimal number (equivalent to 26 decimal)
-//            [0b11111111, ' ', 'două sute cincizeci şi cinci'],  // binary number (equivalent to 255 decimal)
-
             [0, ' ', 'zero'],
             [1, ' ', 'un'],
             [2, ' ', 'doi'],
