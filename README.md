@@ -14,7 +14,7 @@ EX:
 
 # How to install?
 
-### 1. composer
+### 1. use composer
 ```php
 composer require alcea/ro-num
 ```
