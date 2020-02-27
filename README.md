@@ -27,18 +27,20 @@ composer require alcea/ro-num
 # How to use?
 
 ```php
- use alcea\romanian\TranslateNumberToTxt;
+<?php
+# require __DIR__ . '\vendor\autoload.php';
+use alcea\romanian\TranslateNumberToTxt;
 
- $number = '22620';
- echo new TranslateNumberToTxt($number);      // douăzeci şi două de mii şase sute douăzeci 
- echo new TranslateNumberToTxt($number, '#'); // douăzeci#şi#două#de#mii#şase#sute#douăzeci 
- echo new TranslateNumberToTxt($number, '');  // douăzecişidouădemiişasesutedouăzeci
+$number = '22620';
+echo new TranslateNumberToTxt($number);      // douăzeci şi două de mii şase sute douăzeci 
+echo new TranslateNumberToTxt($number, '#'); // douăzeci#şi#două#de#mii#şase#sute#douăzeci 
+echo new TranslateNumberToTxt($number, '');  // douăzecişidouădemiişasesutedouăzeci
  
- // or
+// or
 
- echo TranslateNumberToTxt::convert(255);     // 'două sute cincizeci şi cinci'
- echo TranslateNumberToTxt::convert(83, '#'); // 'optzeci#şi#trei'
- ```
+echo TranslateNumberToTxt::convert(255);     // 'două sute cincizeci şi cinci'
+echo TranslateNumberToTxt::convert(83, '#'); // 'optzeci#şi#trei'
+```
 
 # How to run tests?
 ```
