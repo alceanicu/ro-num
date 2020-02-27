@@ -43,10 +43,11 @@ composer require alcea/ro-num
 # How to run tests?
 ```
 ## Open an terminal and run commands:
+git clone https://github.com/alceanicu/ro-num.git
 cd ro-num
+composer install
 ./vendor/bin/phpunit --bootstrap ./vendor/autoload.php --testdox
 ```
-
 
 ## License
 
