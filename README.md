@@ -24,7 +24,7 @@ composer require alcea/ro-num
 "alcea/ro-num": "^1.1"
 ```
 
-### 3. sau clone from GitHub
+### 3. or clone from GitHub
 ```
 git clone https://github.com/alceanicu/ro-num.git
 ```
